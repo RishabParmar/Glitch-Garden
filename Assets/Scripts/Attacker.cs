@@ -2,7 +2,7 @@
 
 public class Attacker : MonoBehaviour
 {
-    [SerializeField] float walkSpeed;
+    float walkSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,5 +13,10 @@ public class Attacker : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * Time.deltaTime * walkSpeed);
+    }
+
+    public void SetMovementSpeed(float speed)
+    {
+        walkSpeed = speed;
     }
 }
