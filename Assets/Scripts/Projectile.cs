@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
 
     public int GetDamageToBeDone()
     {
-        int damageToBeDone = 10;
+        int damageToBeDone = 15;
         return damageToBeDone;
     }
 }
