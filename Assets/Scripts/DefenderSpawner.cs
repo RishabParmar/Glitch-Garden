@@ -7,7 +7,10 @@ public class DefenderSpawner : MonoBehaviour
 {    
     GameObject defender;
     int starRequirementForDependerSpawn;
+    // The 
+    int[,] grid = new int[7, 5];
     // OnMouseDown() works when the player clicks over the collider or GUIElement that is attached to the gameObject
+
     private void OnMouseDown()
     {
         // If the defender has not been clicked from the defender buttons, then clicking on the core game will say that
@@ -50,6 +53,7 @@ public class DefenderSpawner : MonoBehaviour
                         placeClicked.y += 0.5f;
                     }
                 }
+                Debug.Log("Yo: " + placeClicked);
                 Instantiate(defender, placeClicked, Quaternion.Euler(0f, 180f, 0f));
             }
         }        

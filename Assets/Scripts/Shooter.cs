@@ -2,22 +2,18 @@
 
 public class Shooter : MonoBehaviour
 {
-    [SerializeField] GameObject projectile;
+    [SerializeField] GameObject projectile;   
+    // Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        // How you can change the animator
+        // animator = GetComponent<Animator>();
+        // animator.SetBool("IsAttacking", true);
+    }    
 
     public void fireProjectile()
     {
         Instantiate(projectile, new Vector2(transform.position.x + 0.7f, transform.position.y), Quaternion.identity);        
-    }
-
+    }   
 }

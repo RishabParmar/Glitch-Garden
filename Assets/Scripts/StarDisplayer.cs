@@ -4,7 +4,7 @@ using UnityEngine;
 public class StarDisplayer : MonoBehaviour
 {    
     TextMeshProUGUI starText;
-    int stars = 100;
+    int stars = 1000;
     // Start is called before the first frame update
     void Start()
     {

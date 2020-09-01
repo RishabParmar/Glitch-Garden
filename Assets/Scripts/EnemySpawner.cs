@@ -17,7 +17,9 @@ public class EnemySpawner : MonoBehaviour
     {        
         while(isSpawn)
         {
-            Instantiate(enemy, new Vector2(9.5f, Random.Range(0, 5) + 0.5f), Quaternion.identity);            
+            // Attaching the following spawned enemy as a child of the enemySpawner so that the hierarchy remains clean and tidy
+            GameObject spawedEnemy = Instantiate(enemy, new Vector2(9.5f, Random.Range(0, 5) + 0.5f), Quaternion.identity);
+            spawedEnemy.transform.parent = transform;
             yield return new WaitForSeconds(Random.Range(1, timeBetweenSpawns));            
         }        
     }
