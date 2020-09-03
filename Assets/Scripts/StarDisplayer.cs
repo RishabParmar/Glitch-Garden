@@ -4,7 +4,7 @@ using UnityEngine;
 public class StarDisplayer : MonoBehaviour
 {    
     TextMeshProUGUI starText;
-    int stars = 1000;
+    int stars = 10000;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +13,8 @@ public class StarDisplayer : MonoBehaviour
     }
     
     public void UpdateStarText()
-    {
-        starText.text = stars.ToString();
+    {        
+        starText.text = stars.ToString();       
     }
 
     public void AddStars(int starsToBeAdded)
@@ -24,7 +24,7 @@ public class StarDisplayer : MonoBehaviour
     }
 
     public void StarsSpent(int starsSpent)
-    {
+    {        
         stars -= starsSpent;      
         UpdateStarText();
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     bool isSpawn = true;
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject[] Enemies;
     [SerializeField] float timeBetweenSpawns = 5f;
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,14 @@ public class EnemySpawner : MonoBehaviour
     {        
         while(isSpawn)
         {
+            float yCoOrdinate = Random.Range(0, 5);
+            GameObject enemyToBeSpawned = Enemies[Random.Range(0, Enemies.Length)];
+            if (enemyToBeSpawned.name == "Lizard")
+            {
+                yCoOrdinate += 0.5f;
+            }
             // Attaching the following spawned enemy as a child of the enemySpawner so that the hierarchy remains clean and tidy
-            GameObject spawedEnemy = Instantiate(enemy, new Vector2(9.5f, Random.Range(0, 5) + 0.5f), Quaternion.identity);
+            GameObject spawedEnemy = Instantiate(enemyToBeSpawned, new Vector2(9.5f, yCoOrdinate), Quaternion.identity);
             spawedEnemy.transform.parent = transform;
             yield return new WaitForSeconds(Random.Range(1, timeBetweenSpawns));            
         }        

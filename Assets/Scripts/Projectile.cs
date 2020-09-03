@@ -3,6 +3,7 @@
 public class Projectile : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] int damageToBeDone;
     void Start()
     {
         
@@ -15,8 +16,7 @@ public class Projectile : MonoBehaviour
     }
 
     public int GetDamageToBeDone()
-    {
-        int damageToBeDone = 15;
+    {        
         return damageToBeDone;
     }
 }
