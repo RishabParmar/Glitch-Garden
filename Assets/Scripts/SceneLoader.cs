@@ -14,6 +14,12 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
+        StartCoroutine(LoadAfterDelay());
+    }
+
+    private IEnumerator LoadAfterDelay()
+    {
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -30,4 +36,31 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(currentSceneId + 1);
     }
+
+    public void GameOverScene()
+    {
+        StartCoroutine(LoadStartScreen());
+    }   
+
+    private IEnumerator LoadStartScreen()
+    {        
+        yield return new WaitForSeconds(3);        
+        SceneManager.LoadScene("Start Screen");
+    }
+
+    public static void StartScreen()
+    {        
+        SceneManager.LoadScene("Start Screen");
+    }
+
+    public void OptionsScreen()
+    {
+        SceneManager.LoadScene("Options Screen");
+    }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
+
 }

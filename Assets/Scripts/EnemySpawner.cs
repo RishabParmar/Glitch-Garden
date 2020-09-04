@@ -7,10 +7,11 @@ public class EnemySpawner : MonoBehaviour
     bool isSpawn = true;
     [SerializeField] GameObject[] Enemies;
     [SerializeField] float timeBetweenSpawns = 5f;
+    Coroutine spawnEnemy;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnEnemy());
+        spawnEnemy =  StartCoroutine(SpawnEnemy());
     }
 
     private IEnumerator SpawnEnemy()
@@ -35,4 +36,10 @@ public class EnemySpawner : MonoBehaviour
     {
         
     }
+
+    public void StopEnemySpawning()
+    {
+        StopCoroutine(spawnEnemy);
+    }
+
 }

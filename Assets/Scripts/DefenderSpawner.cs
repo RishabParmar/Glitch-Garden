@@ -69,8 +69,7 @@ public class DefenderSpawner : MonoBehaviour
                     } else
                     {
                         Instantiate(defender, placeClicked, Quaternion.Euler(0f, 180f, 0f));
-                    }
-                    
+                    }             
                     grid[gridXPos, gridYPos] = 1;                 
                 }                
             }

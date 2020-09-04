@@ -22,8 +22,7 @@ public class Defenders : MonoBehaviour
     {
         health -= damage;      
         if(health <= 0)
-        {
-            Destroy(gameObject);
+        {            
             if(gameObject.name == "Cactus")
             {            
                 DefenderSpawner.grid[(int)transform.position.x, (int)(transform.position.y - 0.5f)] = 0;
@@ -31,6 +30,7 @@ public class Defenders : MonoBehaviour
             {               
                 DefenderSpawner.grid[(int)transform.position.x, (int)Math.Ceiling(transform.position.y)] = 0;
             }
+            Destroy(gameObject);
         }
     }
 }

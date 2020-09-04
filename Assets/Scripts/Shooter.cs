@@ -3,14 +3,6 @@
 public class Shooter : MonoBehaviour
 {
     [SerializeField] GameObject projectile;   
-    // Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        // How you can change the animator
-        // animator = GetComponent<Animator>();
-        // animator.SetBool("IsAttacking", true);
-    }    
 
     public void fireProjectile()
     {
