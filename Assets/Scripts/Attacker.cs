@@ -38,8 +38,7 @@ public class Attacker : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {    
         if (collision.gameObject.tag == "gravestone" && gameObject.tag == "Fox")
-        {
-            Debug.Log(collision.gameObject.name);
+        {          
             animator.SetBool("isGravestone", true);
             StartCoroutine(SwitchToWalkingAgain());
         }

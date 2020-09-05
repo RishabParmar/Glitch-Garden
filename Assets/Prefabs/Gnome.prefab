@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e5bae3888da07642be04af446021eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stars: 200
+  stars: 150
   health: 60
 --- !u!95 &2695384838045601399
 Animator:

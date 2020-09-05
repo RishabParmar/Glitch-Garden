@@ -58,19 +58,26 @@ public class DefenderSpawner : MonoBehaviour
                     if (defender.name == "Cactus")
                     {
                         gridYPos = (int)(placeClicked.y);
-                        placeClicked.y += 0.5f;                        
+                        placeClicked.y += 0.5f;                       
                     }
-                }             
+                }
                 if (grid[gridXPos, gridYPos] == 0)
                 {
+                    // Creating a gameObject temp for setting the parent below
+                    GameObject temp;
                     if(defender.name == "Gravestone")
                     {
-                        Instantiate(defender, placeClicked, Quaternion.Euler(0f, 0f, 0f));
+                        temp = Instantiate(defender, placeClicked, Quaternion.Euler(0f, 0f, 0f));
                     } else
                     {
-                        Instantiate(defender, placeClicked, Quaternion.Euler(0f, 180f, 0f));
-                    }             
-                    grid[gridXPos, gridYPos] = 1;                 
+                        temp = Instantiate(defender, placeClicked, Quaternion.Euler(0f, 180f, 0f));
+                    }
+                    Debug.Log("Placed: " + gridXPos + " : " + gridYPos);
+                    grid[gridXPos, gridYPos] = 1;
+                    // Setting the instantiated defenders temp object as child of the defenderSpawner to keep our hierarchy tidy 
+                    // and neat. Note: you can't do defenders.transform.parent as that will be changing the defender prefab's parent
+                    // which is not allowed. Hence we have assigned the temporary object to the gameObject
+                    temp.transform.parent = gameObject.transform;
                 }                
             }
         }        

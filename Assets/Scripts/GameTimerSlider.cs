@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameTimerSlider : MonoBehaviour
 {
-    [SerializeField] float LevelTime = 100f;
+    [SerializeField] float LevelTime = 10f;
     [SerializeField] AudioClip winGame;
     bool callJustOnce = true;
     GameObject levelStatus;
@@ -46,6 +46,6 @@ public class GameTimerSlider : MonoBehaviour
         levelStatus.SetActive(true);
         GameObject.Find("Game Music Player").GetComponent<AudioSource>().clip = winGame;
         GameObject.Find("Game Music Player").GetComponent<AudioSource>().Play();
-        FindObjectOfType<SceneLoader>().LoadNextScene();       
+        FindObjectOfType<SceneLoader>().GameOverScene();       
     }
 }

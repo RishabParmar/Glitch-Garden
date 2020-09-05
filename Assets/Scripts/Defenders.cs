@@ -23,14 +23,15 @@ public class Defenders : MonoBehaviour
         health -= damage;      
         if(health <= 0)
         {            
-            if(gameObject.name == "Cactus")
-            {            
-                DefenderSpawner.grid[(int)transform.position.x, (int)(transform.position.y - 0.5f)] = 0;
+            if(gameObject.name == "Cactus(Clone)")
+            {               
+                DefenderSpawner.grid[(int)transform.position.x, (int)(transform.position.y - 0.5f)] = 0;               
             } else
             {               
-                DefenderSpawner.grid[(int)transform.position.x, (int)Math.Ceiling(transform.position.y)] = 0;
+                DefenderSpawner.grid[(int)transform.position.x, (int)Math.Ceiling(transform.position.y)] = 0;                
             }
             Destroy(gameObject);
         }
     }
 }
+    
